@@ -378,7 +378,7 @@ setMethod(
                                          }
                                          else{.5},
                                          bg="white", col="black")}
-                
+
                 if(namestyle == "refseq"){
                     ref2eg <- AnnotationDbi::as.list(org.Hs.eg.db::org.Hs.egREFSEQ2EG)
                     eg2sym <- AnnotationDbi::as.list(org.Hs.eg.db::org.Hs.egSYMBOL)
