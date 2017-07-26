@@ -32,7 +32,7 @@ importFrom("igraph", simplify,clusters,
             as_adjacency_matrix ,
            graph_from_adjacency_matrix,
            induced_subgraph, V, E,
-           graph_from_graphnel,as_graphnel,
+           igraph.from.graphNEL,igraph.to.graphNEL,
            layout_in_circle,layout_with_fr,vcount,
            cluster_spinglass, 'V<-', 'E<-')
 

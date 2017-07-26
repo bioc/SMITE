@@ -948,7 +948,7 @@ setMethod(
     {
 
         if(inherits(network, what="graphNEL")){
-            network <- graph_from_graphnel(network)
+            network <- igraph.from.graphNEL(network)
         }
 
         if(length(slot(slot(pvalue_annotation,"score_data"),"module_output")) !=0 ){
@@ -1137,7 +1137,7 @@ setMethod(
         g <- suppressWarnings(subNetwork(names(pval.v), network))
         g <- rmSelfLoops(g)
         if(inherits(g,what="igraph")){
-            g <- as_graphnel(g)
+            g <- igraph.to.graphNEL(g)
         }
         
         heinzOut <- suppressWarnings(runFastHeinz(g, scores))
