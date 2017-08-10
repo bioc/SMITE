@@ -125,7 +125,7 @@ setMethod(
             pval <- exp(stat/(-2))
             
             if(class(network) == "graphNEL"){
-                network <- igraph::graph_from_graphnel(network)
+                network <- igraph::igraph.from.graphNEL(network)
                 adj_mat_network <- igraph::as_adjacency_matrix(network)
                 stat.v <- stat[which(names(stat) %in%
                                          rownames(adj_mat_network))]
