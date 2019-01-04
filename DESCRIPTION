@@ -2,7 +2,7 @@ Package: SMITE
 Type: Package
 Title: Significance-based Modules Integrating the Transcriptome and
         Epigenome
-Version: 1.10.0
+Version: 1.10.1
 Date: 2016-01-01
 Author: Neil Ari Wijetunga, Andrew Damon Johnston, John Murray Greally
 Maintainer: Neil Ari Wijetunga <Neil.Wijetunga@med.einstein.yu.edu>,
@@ -22,7 +22,7 @@ Imports: scales, plyr, Hmisc, AnnotationDbi, org.Hs.eg.db, ggplot2,
         graphics, stats, utils
 Suggests: knitr
 VignetteBuilder: knitr
-biocViews: DifferentialMethylation, DifferentialExpression,
+biocViews: ImmunoOncology, DifferentialMethylation, DifferentialExpression,
         SystemsBiology, NetworkEnrichment,GenomeAnnotation,Network,
         Sequencing, RNASeq, Coverage
 URL: https://github.com/GreallyLab/SMITE
