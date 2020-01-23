@@ -19,5 +19,8 @@ setClass(
         annotation="GRangesList",
         modifications="GRangesList",
         expression="ExpressionSet",
-        score_data="PvalueObject"))
-
+        score_data="PvalueObject"),
+    prototype=list(
+        annotation=GRangesList(),
+        modifications=GRangesList()
+    ))
