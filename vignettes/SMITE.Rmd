@@ -137,7 +137,7 @@ Having loaded gene expression and DNA methylation data into the `PvalueAnnotatio
 
 ```{r,  tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=35), eval=FALSE}
 test_annotation <- makePvalueObject(test_annotation, effect_directions=c(methylation_promoter="decrease", 
-                                                                         methylation_body="decrease", methylation_h3k4me1="bidirectional"))
+                                                                         methylation_body="increase", methylation_h3k4me1="bidirectional"))
 ```   
 
 P-values/scores that are combined and then randomized will have a different range than gene expression, or one another, which can skew the identified modules toward a particular modification-context pairing.  Using the `plotDensityPval` function we view the distribution and then normalize using the `normalizePval` function if necessary.  Using the (DEFAULT) `rescale` procedure, p-values are logit transformed before rescaling resulting in a shifting of an approximately normal distribution and no effect on the order of p-values within a modification-context pairing.
@@ -183,7 +183,7 @@ First, we load the desired interactome, in our case from `REACTOME` and run the 
 test_annotation <- runSpinglass(test_annotation, network=REACTOME, maxsize=50, num_iterations=1000)
 
 ## Run goseq on individual modules to determine bias an annotate functions ## 
-test_annotation <- runGOseq(test_annotation, coverage=read.table(system.file(
+test_annotation <- runGOseq(test_annotation, supply_cov=TRUE, coverage=read.table(system.file(
     "extdata", "hg19_symbol_hpaii.sites.inbodyand2kbupstream.bed.gz", package="SMITE")),
     type="kegg")
 ```
