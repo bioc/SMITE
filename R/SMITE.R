@@ -1198,16 +1198,17 @@ setMethod(
         }
 
         if(type == "kegg"){
-
-            eg2kegg <- AnnotationDbi::as.list(KEGG.db::KEGGEXTID2PATHID)
-            temp <- sapply(names(eg2kegg), function(y){
-                eg2sym[[as.character(y)]]})
+            link_kegg<- KEGGREST::keggLink("pathway", "hsa") ## returns pathways for each kegg gene
+            list_link <- split(unname(link_kegg), names(link_kegg)) ## combines each pathway into list object for each gene
+            names(list_link) <- do.call(rbind, strsplit(names(list_link), ":"))[,2]
+            temp <- sapply(names(list_link), function(y){
+              eg2sym[[as.character(y)]]})
             temp <- lapply(temp, function(y){if(is.null(y)){y<-NA};y})
             temp2 <- do.call("c", temp)
-            sym2network <- eg2kegg
-            names(sym2network) <- temp2
-            PATHID2NAME <- AnnotationDbi::as.list(KEGG.db::KEGGPATHID2NAME)
-            names(PATHID2NAME) <- paste("hsa", names(PATHID2NAME), sep="")
+            sym2network_2 <- list_link
+            names(sym2network_2) <- temp2
+            pathways <- KEGGREST::keggList("pathway", "hsa") ## returns the list of human pathways
+            PATHID2NAME <- as.list(pathways)
         }
 
         names(eid) <- paste("module_", names(eid), "_network", sep="")
@@ -1255,8 +1256,8 @@ setMethod(
                             x <- as.vector(b[, 2])
                             x <- as.numeric(x)
                             names(x) <- b[, 1]
-                            pwf <- nullp(x, 'h19', 'knownGene', bias.data=a[, 2])
-                            path <- goseq(pwf, "hg19", "knownGene",
+                            pwf <- goseq::nullp(x, 'h19', 'knownGene', bias.data=a[, 2])
+                            path <- goseq::goseq(pwf, "hg19", "knownGene",
                                           gene2cat=sym2network)
                             path <- cbind(path,(as.character(sapply(
                                 path$category, function(i){PATHID2NAME[[i]]}))))
