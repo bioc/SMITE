@@ -141,7 +141,7 @@ setGeneric(
 
 setGeneric(
     name="runGOseq",
-    def=function(pvalue_annotation, p_thresh=0.05, coverage, type="reactome")
+    def=function(pvalue_annotation, p_thresh=0.05, supply_cov=TRUE, coverage=NULL, type="reactome")
     {
         standardGeneric("runGOseq")
     }
