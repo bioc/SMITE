@@ -8,7 +8,7 @@ Run a GoSeq pathway analysis
 This function allows pathway annotation of identified modules.
 }
 \usage{
-runGOseq(pvalue_annotation, p_thresh = 0.05, coverage, type = "reactome")
+runGOseq(pvalue_annotation, p_thresh = 0.05, supply_cov=TRUE, coverage=NULL, type = "reactome")
 }
 
 \arguments{
@@ -20,10 +20,13 @@ been performed
 A numeric specifying a threshold for signficance of FDR (q-values). DEFAULT is
 alpha=0.05
 }
+  \item{supply_cov}{
+A logical specifying whether or not the user wants to supply their own coverage (TRUE), or would like SMITE to calculate the coverage based on methylation data already inputted. DEFAULT is TRUE.
+}
   \item{coverage}{
 A data.frame that is a bed file (chr  start stop) folowed by a gene name and
 a numeric specifying the bias data (e.g. gene length or number of probes related
-to gene)}
+to gene). DEFAULT is null}
   \item{type}{
 Either "kegg" to run KEGG analysis or "reactome" to run a REACTOME analysis
 }
