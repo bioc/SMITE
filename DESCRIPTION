@@ -2,10 +2,10 @@ Package: SMITE
 Type: Package
 Title: Significance-based Modules Integrating the Transcriptome and
         Epigenome
-Version: 1.21.0
+Version: 1.22.0
 Date: 2016-01-01
 Author: Neil Ari Wijetunga, Andrew Damon Johnston, John Murray Greally
-Maintainer: Neil Ari Wijetunga <Neil.Wijetunga@med.einstein.yu.edu>,
+Maintainer: Neil Ari Wijetunga <nawijet@gmail.com>,
         Andrew Damon Johnston <Andrew.Johnston@med.einstein.yu.edu>
 Description: This package builds on the Epimods framework which
         facilitates finding weighted subnetworks ("modules") on
@@ -20,7 +20,7 @@ Imports: scales, plyr, Hmisc, AnnotationDbi, org.Hs.eg.db, ggplot2,
         reactome.db, KEGGREST, BioNet, goseq, methods, IRanges, igraph,
         Biobase,tools, S4Vectors, geneLenDataBase, grDevices,
         graphics, stats, utils
-Suggests: knitr
+Suggests: rmarkdown
 VignetteBuilder: knitr
 biocViews: ImmunoOncology, DifferentialMethylation, DifferentialExpression,
         SystemsBiology, NetworkEnrichment,GenomeAnnotation,Network,
