@@ -2,7 +2,7 @@ Package: SMITE
 Type: Package
 Title: Significance-based Modules Integrating the Transcriptome and
         Epigenome
-Version: 1.27.0
+Version: 1.28.0
 Date: 2021-11-21
 Author: Neil Ari Wijetunga, Andrew Damon Johnston, John Murray Greally
 Maintainer: Neil Ari Wijetunga <nawijet@gmail.com>,
